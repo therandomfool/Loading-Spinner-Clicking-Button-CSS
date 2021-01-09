@@ -1,0 +1,70 @@
+
+
+.container {
+    position: relative;
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+
+.button {
+    position: absolute;
+    height: 69px;
+    width: 269px;
+    position: relative;
+    padding: 8px 16px;
+    background: dodgerblue;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  .button:active {
+    background: #007a63;
+  }
+  
+  .button__text {
+    font: bold 29px "Quicksand", san-serif;
+    color: #ffffff;
+    transition: all 0.2s;
+  }
+  
+  .button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .button--loading::after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 10px solid transparent;
+    border-top-color: crimson;
+    border-left-color: crimson;
+
+    border-radius: 50%;
+    animation: button-loading-spinner .69s ease infinite;
+  }
+  
+  @keyframes button-loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+  
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  
